@@ -7,21 +7,28 @@
 ;		összeadása, túlcsordulás figyelése. Bemenet: a két operandus és
 ;		az eredmény kezdőcímei (mutatók). Kimenet: eredmény (a kapott
 ; 		címen), CY.
+; A program a bemeneteket a RAM-ból a 0x1000 és a 0x1004 kezdőcímekkel olvassa
+; be, a végeredményt 0x100C kezdőcímmel menti el. A tárolási sorrend mind a
+; bemenetben, mind a kimenetben a legkisebb "helyiértékű" byte-tal kezdődik.
+; Az eredmény az előírásoknak megfelelően az összeadó szubrutin végén
+; levő POP PSW utasításra helyezett breakpointtal tekinthető meg.
+; A program végig kezeli a carry-t, de maga után csak a carry flaget állítja be.
 ; -----------------------------------------------------------
 
 $NOMOD51 ; a sztenderd 8051 regiszter definíciók nem szükségesek
 
 $INCLUDE (SI_EFM8BB3_Defs.inc) ; regiszter és SFR definíciók
 
-; Két 32 bites szám kezdőcímére (Least Significant) mutató pointerek
-input1 EQU 0x0000		; 1000h-1003h-ig tart a memóriában, LS - MS
-input2 EQU 0x0004		; 1004h-1007h-ig tart a memóriában, LS - MS
+; Két 32 bites bemenet kezdőcímére (Least Significant) mutató pointerek
+input1 EQU 0x1000		; 1000h-1003h-ig tart a memóriában, LS - MS
+input2 EQU 0x1004		; 1004h-1007h-ig tart a memóriában, LS - MS
 
 ; A 32 bites kimenet kezdőcímére mutató pointer (Least Significant)
-output EQU 0x0008
+output EQU 0x1008
 
-; Carry state kimentése
-maxCarry EQU 0x000C
+; Carry state kimentése, amennyiben a program futása közben a teljes 32
+; 	bit túlcsordulna
+maxCarry EQU 0x100C
 
 ; Ugrótábla létrehozása
 	CSEG AT 0
@@ -41,15 +48,16 @@ Main:
 	MOV WDTCN,#0ADh
 	SETB IE_EA ; interruptok engedélyezése
 
-	; Tesztadatok betöltése
-	MOV 0x0000, #0xFF
-	MOV 0x0001, #0xFF
-	MOV 0x0002, #0xFF
-	MOV 0x0003, #0xFF
-	MOV 0x0004, #0x01
-	MOV 0x0005, #0x00
-	MOV 0x0006, #0x00
-	MOV 0x0007, #0x00
+	; Tesztadatok betöltése (gondolom a tanszéken saját számokkal tesztelnek ezért
+	; kikommenteztem).
+	;MOV 0x0000, #0xFF
+	;MOV 0x0001, #0xFF
+	;MOV 0x0002, #0xFF
+	;MOV 0x0003, #0xFF
+	;MOV 0x0004, #0x01
+	;MOV 0x0005, #0x00
+	;MOV 0x0006, #0x00
+	;MOV 0x0007, #0x00
 
 	; Két, a belső memóriában tárolt 32 bites operandus összeadása és memóriába mentése
 	CALL LongWordAdderSubroutine
@@ -57,26 +65,9 @@ Main:
 	JMP $ ; végtelen ciklusban várunk
 
 ; -----------------------------------------------------------
-; Sample szubrutin
-; -----------------------------------------------------------
-; Funkci�: 		8 bites szám maszkolása
-; Bementek:		R1 - maszkolandó szám
-;			 	R2 - maszk
-; Kimenetek:  	R3 - maszkolt szám
-; Regisztereket módosítja:
-;				A
-; -----------------------------------------------------------
-SampleSubroutine:
-	MOV A, R1 ; csak az akkumulátor értékén tudjuk elvégezni a maszkolást, ezért töltjük az akkumulátort
-	ANL A, R2 ; elvégezz�k a maszkolást
-	MOV	R3, A ; tároljuk az eredményt
-	RET
-
-
-; -----------------------------------------------------------
 ; Read Operand szubrutin
 ; -----------------------------------------------------------
-; Funkci�: 		2 32 bites szó felhozása a belső memóriából
+; Funkció: 		2 32 bites szó felhozása a belső memóriából
 ; Bementek:		1. szó kezdőcíme (LSB first)
 ;			 	2. szó kezdőcíme (MSB first)
 ; Kimenetek:  	R3...R0 - 1. szó
@@ -85,6 +76,8 @@ SampleSubroutine:
 ;				A, R7...R0
 ; -----------------------------------------------------------
 ReadOperandsSubroutine:
+	; Nem szükséges a PSW-t kimenteni, azt a másik szbrutin megteszi, neki meg
+	; 	édesmindegy.
 	; Két 32 bites szám a belső memóriából regiszterekbe való töltése.
 	MOV R0, input1		; Első bemenet legkisebb helyiértéke
 	MOV R1, input1+1
@@ -99,7 +92,7 @@ ReadOperandsSubroutine:
 ; -----------------------------------------------------------
 ; Long Word Adder szubrutin
 ; -----------------------------------------------------------
-; Funkci�: 		2 32 bites szó összeadása a belső memóriából
+; Funkció: 		2 32 bites szó összeadása a belső memóriából
 ; Bementek:		1. szó kezdőcíme (LSB first)
 ;			 	2. szó kezdőcíme (MSB first)
 ; Kimenetek:  	R3...R0 - 1. szó
@@ -124,7 +117,7 @@ FIRST8BIT:
 	JNC SECOND8BIT			; Ha nincs carry, továbbmegyünk
 	MOV A, R1				; ..., ha van akkor hozzáadjuk az egyik eggyel nagyobb helyiértékhez
 	ADD A, #0x01			; Ez a herce-hurca itt azért van, mert az INC nem
-	MOV R1, A				; 	tud flaget állítani.
+	MOV R1, A				; 	tud flaget állítani, így mindig be kell tölteni a regiszterértéket.
 	JNC SECOND8BIT
 	MOV A, R2
 	ADD A, #0x01
