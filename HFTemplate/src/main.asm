@@ -20,6 +20,9 @@ input2 EQU 0x0004		; 1004h-1007h-ig tart a memóriában, LS - MS
 ; A 32 bites kimenet kezdőcímére mutató pointer (Least Significant)
 output EQU 0x0008
 
+; Carry state kimentése
+maxCarry EQU 0x000C
+
 ; Ugrótábla létrehozása
 	CSEG AT 0
 	SJMP Main
@@ -39,14 +42,14 @@ Main:
 	SETB IE_EA ; interruptok engedélyezése
 
 	; Tesztadatok betöltése
-	MOV 0x0000, #0xEE
-	MOV 0x0001, #0x20
-	MOV 0x0002, #0x00
-	MOV 0x0003, #0x11
-	MOV 0x0004, #0xF0
-	MOV 0x0005, #0x45
-	MOV 0x0006, #0x77
-	MOV 0x0007, #0x03
+	MOV 0x0000, #0xFF
+	MOV 0x0001, #0xFF
+	MOV 0x0002, #0xFF
+	MOV 0x0003, #0xFF
+	MOV 0x0004, #0x01
+	MOV 0x0005, #0x00
+	MOV 0x0006, #0x00
+	MOV 0x0007, #0x00
 
 	; Két, a belső memóriában tárolt 32 bites operandus összeadása és memóriába mentése
 	CALL LongWordAdderSubroutine
@@ -107,6 +110,7 @@ ReadOperandsSubroutine:
 LongWordAdderSubroutine:
 
 	PUSH PSW
+	MOV maxCarry, #0x00
 
 ; Elsőnek be kell tölteni a két számot a regisztereinkbe.
 	CALL ReadOperandsSubroutine
@@ -114,45 +118,68 @@ LongWordAdderSubroutine:
 ; Ehhez alulról fölfelé bájtonként összeadom őket,
 ; a CY flag minden összeadás után való figyelembevétel mellett.
 FIRST8BIT:
-	MOV A, R0		; Első szám alsó 8 bitjét az akkumulátorba mozgatjuk
-	ADD A, R4		; Második szám alsó 8 bitjét hozzáadjuk
-	MOV output, A	; Akkumulátor tartalmát kimentjük az eredmény memóriacímére
-	JNC NOCARRY1	; Ha nincs túlcsordulás nullát töltünk az A-ba...
-	MOV A, #0x01	; ..., ha van akkor egyet
-	JMP SECOND8BIT
-NOCARRY1:
-	MOV A, #0x00		; Akkumulátor kinullázása
+	MOV A, R0				; Első szám alsó 8 bitjét az akkumulátorba mozgatjuk
+	ADD A, R4				; Második szám alsó 8 bitjét hozzáadjuk
+	MOV output, A			; Akkumulátor tartalmát kimentjük az eredmény memóriacímére
+	JNC SECOND8BIT			; Ha nincs carry, továbbmegyünk
+	MOV A, R1				; ..., ha van akkor hozzáadjuk az egyik eggyel nagyobb helyiértékhez
+	ADD A, #0x01			; Ez a herce-hurca itt azért van, mert az INC nem
+	MOV R1, A				; 	tud flaget állítani.
+	JNC SECOND8BIT
+	MOV A, R2
+	ADD A, #0x01
+	MOV R2, A
+	JNC SECOND8BIT
+	MOV A, R3
+	ADD A, #0x01
+	MOV R3, A
+	JNC SECOND8BIT
+	MOV maxCarry, #0x01		; ..., ha van, jelezzük, hogy mindenképpen be kell
+							;	állítani a carry flaget a szubrutin végén,
+							; 	mert a teljes művelet túlcsordul.
 
 SECOND8BIT:
-	ADD A, R1		; Mivel az akkumulátor vagy 0-t, vagy carryt tárol, a felhozott
-	ADD A, R5		;	értéket hozzá kell adni az akkumulátorhoz, a mov nem működik
+	MOV A, R1
+	ADD A, R5
 	MOV output+1, A
-	JNC NOCARRY2
-	MOV A, #0x01
-	JMP THIRD8BIT
-NOCARRY2:
-	MOV A, #0x00		; Akkumulátor kinullázása
+	JNC THIRD8BIT
+	MOV A, R2
+	ADD A, #0x01
+	MOV R2, A
+	JNC THIRD8BIT
+	MOV A, R3
+	ADD A, #0x01
+	MOV R3, A
+	JNC THIRD8BIT
+	MOV maxCarry, #0x01
 
 THIRD8BIT:
-	ADD A, R2
+	MOV A, R2
 	ADD A, R6
 	MOV output+2, A
-	JNC NOCARRY3
-	MOV A, #0x01
-	JMP FOURTH8BIT
-NOCARRY3:
-	MOV A, #0x00		; Akkumulátor kinullázása
+	JNC FOURTH8BIT
+	MOV A, R3
+	ADD A, #0x01
+	MOV R3, A
+	JNC FOURTH8BIT
+	MOV maxCarry, #0x01
 
 FOURTH8BIT:
-	ADD A, R3
+	MOV A, R3
 	ADD A, R7
 	MOV output+3, A
+
+	; Carry flag beállítása, ha be kell (ha a maxCarry-n tárolt érték be lett
+	; állítva egyre, akkor ha hozzáadunk FF-et, be fogja állítani a carry flaget).
+	JC CFLAGNOSET
+	MOV A, maxCarry
+	ADD A, #0xFF
 
 	; Ezen a ponton az eredmények ki vannak írva a megfelelő memóriatartományba
 	; a megfelelő sorrendben (LSB first) és a Carry Flag is a teljes művelet
 	; carryjét tartalmazza. A szubrutin így elvégezte feladatát és visszatérhet.
-
+CFLAGNOSET:
 	POP PSW
 
 	RET
-END
+

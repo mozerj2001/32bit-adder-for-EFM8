@@ -1,4 +1,4 @@
-AX51 MACRO ASSEMBLER  MAIN                                                                  11/22/21 10:46:14 PAGE     1
+AX51 MACRO ASSEMBLER  MAIN                                                                  11/22/21 12:36:20 PAGE     1
 
 
 MACRO ASSEMBLER AX51 V3.15.3.0
@@ -62,7 +62,7 @@ LOC    OBJ             LINE     SOURCE
                     +1   48     ;  EFM8BB31F64A_4QFN24
                     +1   49     ;  EFM8BB31F64A_5QFN32
                     +1   50     ;  EFM8BB31F64G_QFN24
-AX51 MACRO ASSEMBLER  MAIN                                                                  11/22/21 10:46:14 PAGE     2
+AX51 MACRO ASSEMBLER  MAIN                                                                  11/22/21 12:36:20 PAGE     2
 
                     +1   51     ;  EFM8BB31F64G_QFN32
                     +1   52     ;  EFM8BB31F64G_QFP32
@@ -127,7 +127,7 @@ LOC    OBJ             LINE     SOURCE
  0086               +1  111     CRC0CN1   DATA 086H; CRC0 Control 1                           
  00D3               +1  112     CRC0CNT   DATA 0D3H; CRC0 Automatic Flash Sector Count        
  00CB               +1  113     CRC0DAT   DATA 0CBH; CRC0 Data Output                         
-AX51 MACRO ASSEMBLER  MAIN                                                                  11/22/21 10:46:14 PAGE     3
+AX51 MACRO ASSEMBLER  MAIN                                                                  11/22/21 12:36:20 PAGE     3
 
  00CF               +1  114     CRC0FLIP  DATA 0CFH; CRC0 Bit Flip                            
  00CA               +1  115     CRC0IN    DATA 0CAH; CRC0 Data Input                          
@@ -192,7 +192,7 @@ LOC    OBJ             LINE     SOURCE
  00F2               +1  174     P1MDIN    DATA 0F2H; Port 1 Input Mode                        
  00A5               +1  175     P1MDOUT   DATA 0A5H; Port 1 Output Mode                       
  00D5               +1  176     P1SKIP    DATA 0D5H; Port 1 Skip                              
-AX51 MACRO ASSEMBLER  MAIN                                                                  11/22/21 10:46:14 PAGE     4
+AX51 MACRO ASSEMBLER  MAIN                                                                  11/22/21 12:36:20 PAGE     4
 
  00A0               +1  177     P2        DATA 0A0H; Port 2 Pin Latch                         
  00FC               +1  178     P2MASK    DATA 0FCH; Port 2 Mask                              
@@ -257,7 +257,7 @@ LOC    OBJ             LINE     SOURCE
  00C2               +1  237     SMB0DAT   DATA 0C2H; SMBus 0 Data                             
  00C3               +1  238     SMB0FCN0  DATA 0C3H; SMBus 0 FIFO Control 0                   
  00C4               +1  239     SMB0FCN1  DATA 0C4H; SMBus 0 FIFO Control 1                   
-AX51 MACRO ASSEMBLER  MAIN                                                                  11/22/21 10:46:14 PAGE     5
+AX51 MACRO ASSEMBLER  MAIN                                                                  11/22/21 12:36:20 PAGE     5
 
  00EF               +1  240     SMB0FCT   DATA 0EFH; SMBus 0 FIFO Count                       
  00C5               +1  241     SMB0RXLN  DATA 0C5H; SMBus 0 Receive Length Counter           
@@ -322,7 +322,7 @@ LOC    OBJ             LINE     SOURCE
  00C3               +1  300     ADC0GT  DATA 0C3H ; ADC0 Greater-Than Low Byte           
  00BD               +1  301     ADC0    DATA 0BDH ; ADC0 Data Word Low Byte              
  00C5               +1  302     ADC0LT  DATA 0C5H ; ADC0 Less-Than Low Byte              
-AX51 MACRO ASSEMBLER  MAIN                                                                  11/22/21 10:46:14 PAGE     6
+AX51 MACRO ASSEMBLER  MAIN                                                                  11/22/21 12:36:20 PAGE     6
 
  0082               +1  303     DP      DATA 082H ; Data Pointer Low                     
  00FB               +1  304     PCA0CP0 DATA 0FBH ; PCA Channel 0 Capture Module Low Byte
@@ -387,7 +387,7 @@ LOC    OBJ             LINE     SOURCE
  00E8.4             +1  363     CLIF0_C2FIF BIT CLIF0.4 ; CLU2 Falling Edge Flag
  00E8.5             +1  364     CLIF0_C2RIF BIT CLIF0.5 ; CLU2 Rising Edge Flag 
  00E8.6             +1  365     CLIF0_C3FIF BIT CLIF0.6 ; CLU3 Falling Edge Flag
-AX51 MACRO ASSEMBLER  MAIN                                                                  11/22/21 10:46:14 PAGE     7
+AX51 MACRO ASSEMBLER  MAIN                                                                  11/22/21 12:36:20 PAGE     7
 
  00E8.7             +1  366     CLIF0_C3RIF BIT CLIF0.7 ; CLU3 Rising Edge Flag 
                     +1  367     
@@ -452,7 +452,7 @@ LOC    OBJ             LINE     SOURCE
  00A0.2             +1  426     P2_B2 BIT P2.2 ; Port 2 Bit 2 Latch
  00A0.3             +1  427     P2_B3 BIT P2.3 ; Port 2 Bit 3 Latch
  00A0.4             +1  428     P2_B4 BIT P2.4 ; Port 2 Bit 4 Latch
-AX51 MACRO ASSEMBLER  MAIN                                                                  11/22/21 10:46:14 PAGE     8
+AX51 MACRO ASSEMBLER  MAIN                                                                  11/22/21 12:36:20 PAGE     8
 
  00A0.5             +1  429     P2_B5 BIT P2.5 ; Port 2 Bit 5 Latch
  00A0.6             +1  430     P2_B6 BIT P2.6 ; Port 2 Bit 6 Latch
@@ -517,7 +517,7 @@ LOC    OBJ             LINE     SOURCE
  00F8.0             +1  489     SPI0CN0_SPIEN  BIT SPI0CN0.0 ; SPI0 Enable            
  00F8.1             +1  490     SPI0CN0_TXNF   BIT SPI0CN0.1 ; TX FIFO Not Full       
  00F8.2             +1  491     SPI0CN0_NSSMD0 BIT SPI0CN0.2 ; Slave Select Mode Bit 0
-AX51 MACRO ASSEMBLER  MAIN                                                                  11/22/21 10:46:14 PAGE     9
+AX51 MACRO ASSEMBLER  MAIN                                                                  11/22/21 12:36:20 PAGE     9
 
  00F8.3             +1  492     SPI0CN0_NSSMD1 BIT SPI0CN0.3 ; Slave Select Mode Bit 1
  00F8.4             +1  493     SPI0CN0_RXOVRN BIT SPI0CN0.4 ; Receive Overrun Flag   
@@ -582,7 +582,7 @@ LOC    OBJ             LINE     SOURCE
  0001               +1  552     TIMER0_IRQn  EQU 1  ; Timer 0 Overflow          
  0002               +1  553     INT1_IRQn    EQU 2  ; External Interrupt 1      
  0003               +1  554     TIMER1_IRQn  EQU 3  ; Timer 1 Overflow          
-AX51 MACRO ASSEMBLER  MAIN                                                                  11/22/21 10:46:14 PAGE    10
+AX51 MACRO ASSEMBLER  MAIN                                                                  11/22/21 12:36:20 PAGE    10
 
  0004               +1  555     UART0_IRQn   EQU 4  ; UART0                     
  0005               +1  556     TIMER2_IRQn  EQU 5  ; Timer 2 Overflow / Capture
@@ -616,153 +616,190 @@ LOC    OBJ             LINE     SOURCE
                         584     ; A 32 bites kimenet kezdőcímére mutató pointer (Least Significant)
  0008                   585     output EQU 0x0008
                         586     
-                        587     ; Ugrótábla létrehozása
-000000                  588             CSEG AT 0
-000000 8000       F     589             SJMP Main
-                        590     
-------                  591     myprog SEGMENT CODE                     ;saját kódszegmens létrehozása
-------                  592     RSEG myprog                             ;saját kódszegmens kiválasztása
-                        593     ; ------------------------------------------------------------
-                        594     ; Főprogram
-                        595     ; ------------------------------------------------------------
-                        596     ; Feladata: a szükséges inicializációs lépések elvégzése és a
-                        597     ;                       feladatot megvalósító szubrutin(ok) meghívása
+                        587     ; Carry state kimentése
+ 000C                   588     maxCarry EQU 0x000C
+                        589     
+                        590     ; Ugrótábla létrehozása
+000000                  591             CSEG AT 0
+000000 8000       F     592             SJMP Main
+                        593     
+------                  594     myprog SEGMENT CODE                     ;saját kódszegmens létrehozása
+------                  595     RSEG myprog                             ;saját kódszegmens kiválasztása
+                        596     ; ------------------------------------------------------------
+                        597     ; Főprogram
                         598     ; ------------------------------------------------------------
-000000                  599     Main:
-000000 C2AF             600             CLR IE_EA ; interruptok tiltása watchdog tiltás idejére
-000002 7597DE           601             MOV WDTCN,#0DEh ; watchdog timer tiltása
-000005 7597AD           602             MOV WDTCN,#0ADh
-000008 D2AF             603             SETB IE_EA ; interruptok engedélyezése
-                        604     
-                        605             ; Tesztadatok betöltése
-00000A 7500EE           606             MOV 0x0000, #0xEE
-00000D 750120           607             MOV 0x0001, #0x20
-000010 750200           608             MOV 0x0002, #0x00
-000013 750311           609             MOV 0x0003, #0x11
-000016 7504F0           610             MOV 0x0004, #0xF0
-000019 750545           611             MOV 0x0005, #0x45
-00001C 750677           612             MOV 0x0006, #0x77
-00001F 750703           613             MOV 0x0007, #0x03
-                        614     
-                        615             ; Két, a belső memóriában tárolt 32 bites operandus összeadása és memór
-                               iába mentése
-000022 120000     F     616             CALL LongWordAdderSubroutine
-AX51 MACRO ASSEMBLER  MAIN                                                                  11/22/21 10:46:14 PAGE    11
-
+                        599     ; Feladata: a szükséges inicializációs lépések elvégzése és a
+                        600     ;                       feladatot megvalósító szubrutin(ok) meghívása
+                        601     ; ------------------------------------------------------------
+000000                  602     Main:
+000000 C2AF             603             CLR IE_EA ; interruptok tiltása watchdog tiltás idejére
+000002 7597DE           604             MOV WDTCN,#0DEh ; watchdog timer tiltása
+000005 7597AD           605             MOV WDTCN,#0ADh
+000008 D2AF             606             SETB IE_EA ; interruptok engedélyezése
+                        607     
+                        608             ; Tesztadatok betöltése
+00000A 7500FF           609             MOV 0x0000, #0xFF
+00000D 7501FF           610             MOV 0x0001, #0xFF
+000010 7502FF           611             MOV 0x0002, #0xFF
+000013 7503FF           612             MOV 0x0003, #0xFF
+000016 750401           613             MOV 0x0004, #0x01
+000019 750500           614             MOV 0x0005, #0x00
+00001C 750600           615             MOV 0x0006, #0x00
+00001F 750700           616             MOV 0x0007, #0x00
                         617     
-000025 80FE             618             JMP $ ; végtelen ciklusban várunk
-                        619     
-                        620     ; -----------------------------------------------------------
-                        621     ; Sample szubrutin
-                        622     ; -----------------------------------------------------------
-                        623     ; Funkci�:            8 bites szám maszkolása
-                        624     ; Bementek:             R1 - maszkolandó szám
-                        625     ;                               R2 - maszk
-                        626     ; Kimenetek:    R3 - maszkolt szám
-                        627     ; Regisztereket módosítja:
-                        628     ;                               A
-                        629     ; -----------------------------------------------------------
-000027                  630     SampleSubroutine:
-000027 E9               631             MOV A, R1 ; csak az akkumulátor értékén tudjuk elvégezni a maszkolást, ez�
-                               �rt töltjük az akkumulátort
-000028 5A               632             ANL A, R2 ; elvégezz�k a maszkolást
-000029 FB               633             MOV     R3, A ; tároljuk az eredményt
-00002A 22               634             RET
-                        635     
-                        636     
-                        637     ; -----------------------------------------------------------
-                        638     ; Read Operand szubrutin
-                        639     ; -----------------------------------------------------------
-                        640     ; Funkci�:            2 32 bites szó felhozása a belső memóriából
-                        641     ; Bementek:             1. szó kezdőcíme (LSB first)
-                        642     ;                               2. szó kezdőcíme (MSB first)
-                        643     ; Kimenetek:    R3...R0 - 1. szó
-                        644     ;                               R7...R4 - 2.szó
-                        645     ; Regisztereket módosítja:
-                        646     ;                               A, R7...R0
-                        647     ; -----------------------------------------------------------
-00002B                  648     ReadOperandsSubroutine:
-                        649             ; Két 32 bites szám a belső memóriából regiszterekbe való töltése.
-00002B A800             650             MOV R0, input1          ; Első bemenet legkisebb helyiértéke
-00002D A901             651             MOV R1, input1+1
-00002F AA02             652             MOV R2, input1+2
-000031 AB03             653             MOV R3, input1+3                ; Első bemenet legnagyobb helyiértéke
-000033 AC04             654             MOV R4, input2          ; Második bemenet legkisebb helyiértéke
-000035 AD05             655             MOV R5, input2+1
-000037 AE06             656             MOV R6, input2+2
-000039 AF07             657             MOV R7, input2+3                ; Második bemenet legnagyobb helyiértéke
-00003B 22               658             RET
-                        659     
-                        660     ; -----------------------------------------------------------
-                        661     ; Long Word Adder szubrutin
-                        662     ; -----------------------------------------------------------
-                        663     ; Funkci�:            2 32 bites szó összeadása a belső memóriából
-                        664     ; Bementek:             1. szó kezdőcíme (LSB first)
-                        665     ;                               2. szó kezdőcíme (MSB first)
-                        666     ; Kimenetek:    R3...R0 - 1. szó
-                        667     ;                               R7...R4 - 2.szó
-                        668     ; Regisztereket módosítja:
-                        669     ;                               A, PSW, R7...R0
-                        670     ; -----------------------------------------------------------
-00003C                  671     LongWordAdderSubroutine:
-                        672     
-00003C C0D0             673             PUSH PSW
-                        674     
-                        675     ; Elsőnek be kell tölteni a két számot a regisztereinkbe.
-00003E 120000     F     676             CALL ReadOperandsSubroutine
-                        677     ; Össze kell adni őket és kimenteni az eredményt a memóriába.
-                        678     ; Ehhez alulról fölfelé bájtonként összeadom őket,
-AX51 MACRO ASSEMBLER  MAIN                                                                  11/22/21 10:46:14 PAGE    12
+AX51 MACRO ASSEMBLER  MAIN                                                                  11/22/21 12:36:20 PAGE    11
 
-                        679     ; a CY flag minden összeadás után való figyelembevétel mellett.
-000041                  680     FIRST8BIT:
-000041 E8               681             MOV A, R0               ; Első szám alsó 8 bitjét az akkumulátorba mozgatjuk
-000042 2C               682             ADD A, R4               ; Második szám alsó 8 bitjét hozzáadjuk
-000043 F508             683             MOV output, A   ; Akkumulátor tartalmát kimentjük az eredmény memóriacímé
-                               re
-000045 5004             684             JNC NOCARRY1    ; Ha nincs túlcsordulás nullát töltünk az A-ba...
-000047 7401             685             MOV A, #0x01    ; ..., ha van akkor egyet
-000049 8002             686             JMP SECOND8BIT
-00004B                  687     NOCARRY1:
-00004B 7400             688             MOV A, #0x00            ; Akkumulátor kinullázása
-                        689     
-00004D                  690     SECOND8BIT:
-00004D 29               691             ADD A, R1               ; Mivel az akkumulátor vagy 0-t, vagy carryt tárol, a 
-                               felhozott
-00004E 2D               692             ADD A, R5               ;       értéket hozzá kell adni az akkumulátorhoz, a
-                                mov nem működik
-00004F F509             693             MOV output+1, A
-000051 5004             694             JNC NOCARRY2
-000053 7401             695             MOV A, #0x01
-000055 8002             696             JMP THIRD8BIT
-000057                  697     NOCARRY2:
-000057 7400             698             MOV A, #0x00            ; Akkumulátor kinullázása
-                        699     
-000059                  700     THIRD8BIT:
-000059 2A               701             ADD A, R2
-00005A 2E               702             ADD A, R6
-00005B F50A             703             MOV output+2, A
-00005D 5004             704             JNC NOCARRY3
-00005F 7401             705             MOV A, #0x01
-000061 8002             706             JMP FOURTH8BIT
-000063                  707     NOCARRY3:
-000063 7400             708             MOV A, #0x00            ; Akkumulátor kinullázása
-                        709     
-000065                  710     FOURTH8BIT:
-000065 2B               711             ADD A, R3
-000066 2F               712             ADD A, R7
-000067 F50B             713             MOV output+3, A
-                        714     
-                        715             ; Ezen a ponton az eredmények ki vannak írva a megfelelő memóriatartományba
-                        716             ; a megfelelő sorrendben (LSB first) és a Carry Flag is a teljes művelet
-                        717             ; carryjét tartalmazza. A szubrutin így elvégezte feladatát és visszatérhe
+                        618             ; Két, a belső memóriában tárolt 32 bites operandus összeadása és memór
+                               iába mentése
+000022 120000     F     619             CALL LongWordAdderSubroutine
+                        620     
+000025 80FE             621             JMP $ ; végtelen ciklusban várunk
+                        622     
+                        623     ; -----------------------------------------------------------
+                        624     ; Sample szubrutin
+                        625     ; -----------------------------------------------------------
+                        626     ; Funkci�:            8 bites szám maszkolása
+                        627     ; Bementek:             R1 - maszkolandó szám
+                        628     ;                               R2 - maszk
+                        629     ; Kimenetek:    R3 - maszkolt szám
+                        630     ; Regisztereket módosítja:
+                        631     ;                               A
+                        632     ; -----------------------------------------------------------
+000027                  633     SampleSubroutine:
+000027 E9               634             MOV A, R1 ; csak az akkumulátor értékén tudjuk elvégezni a maszkolást, ez�
+                               �rt töltjük az akkumulátort
+000028 5A               635             ANL A, R2 ; elvégezz�k a maszkolást
+000029 FB               636             MOV     R3, A ; tároljuk az eredményt
+00002A 22               637             RET
+                        638     
+                        639     
+                        640     ; -----------------------------------------------------------
+                        641     ; Read Operand szubrutin
+                        642     ; -----------------------------------------------------------
+                        643     ; Funkci�:            2 32 bites szó felhozása a belső memóriából
+                        644     ; Bementek:             1. szó kezdőcíme (LSB first)
+                        645     ;                               2. szó kezdőcíme (MSB first)
+                        646     ; Kimenetek:    R3...R0 - 1. szó
+                        647     ;                               R7...R4 - 2.szó
+                        648     ; Regisztereket módosítja:
+                        649     ;                               A, R7...R0
+                        650     ; -----------------------------------------------------------
+00002B                  651     ReadOperandsSubroutine:
+                        652             ; Két 32 bites szám a belső memóriából regiszterekbe való töltése.
+00002B A800             653             MOV R0, input1          ; Első bemenet legkisebb helyiértéke
+00002D A901             654             MOV R1, input1+1
+00002F AA02             655             MOV R2, input1+2
+000031 AB03             656             MOV R3, input1+3                ; Első bemenet legnagyobb helyiértéke
+000033 AC04             657             MOV R4, input2          ; Második bemenet legkisebb helyiértéke
+000035 AD05             658             MOV R5, input2+1
+000037 AE06             659             MOV R6, input2+2
+000039 AF07             660             MOV R7, input2+3                ; Második bemenet legnagyobb helyiértéke
+00003B 22               661             RET
+                        662     
+                        663     ; -----------------------------------------------------------
+                        664     ; Long Word Adder szubrutin
+                        665     ; -----------------------------------------------------------
+                        666     ; Funkci�:            2 32 bites szó összeadása a belső memóriából
+                        667     ; Bementek:             1. szó kezdőcíme (LSB first)
+                        668     ;                               2. szó kezdőcíme (MSB first)
+                        669     ; Kimenetek:    R3...R0 - 1. szó
+                        670     ;                               R7...R4 - 2.szó
+                        671     ; Regisztereket módosítja:
+                        672     ;                               A, PSW, R7...R0
+                        673     ; -----------------------------------------------------------
+00003C                  674     LongWordAdderSubroutine:
+                        675     
+00003C C0D0             676             PUSH PSW
+00003E 750C00           677             MOV maxCarry, #0x00
+                        678     
+AX51 MACRO ASSEMBLER  MAIN                                                                  11/22/21 12:36:20 PAGE    12
+
+                        679     ; Elsőnek be kell tölteni a két számot a regisztereinkbe.
+000041 120000     F     680             CALL ReadOperandsSubroutine
+                        681     ; Össze kell adni őket és kimenteni az eredményt a memóriába.
+                        682     ; Ehhez alulról fölfelé bájtonként összeadom őket,
+                        683     ; a CY flag minden összeadás után való figyelembevétel mellett.
+000044                  684     FIRST8BIT:
+000044 E8               685             MOV A, R0                               ; Első szám alsó 8 bitjét az akkumul
+                               átorba mozgatjuk
+000045 2C               686             ADD A, R4                               ; Második szám alsó 8 bitjét hozzáa
+                               djuk
+000046 F508             687             MOV output, A                   ; Akkumulátor tartalmát kimentjük az eredmén
+                               y memóriacímére
+000048 5015             688             JNC SECOND8BIT                  ; Ha nincs carry, továbbmegyünk
+00004A E9               689             MOV A, R1                               ; ..., ha van akkor hozzáadjuk az egyik
+                                eggyel nagyobb helyiértékhez
+00004B 2401             690             ADD A, #0x01                    ; Ez a herce-hurca itt azért van, mert az INC n
+                               em
+00004D F9               691             MOV R1, A                               ;       tud flaget állítani.
+00004E 500F             692             JNC SECOND8BIT
+000050 EA               693             MOV A, R2
+000051 2401             694             ADD A, #0x01
+000053 FA               695             MOV R2, A
+000054 5009             696             JNC SECOND8BIT
+000056 EB               697             MOV A, R3
+000057 2401             698             ADD A, #0x01
+000059 FB               699             MOV R3, A
+00005A 5003             700             JNC SECOND8BIT
+00005C 750C01           701             MOV maxCarry, #0x01             ; ..., ha van, jelezzük, hogy mindenképpen be 
+                               kell
+                        702                                                             ;       állítani a carry flage
+                               t a szubrutin végén,
+                        703                                                             ;       mert a teljes művelet t
+                               úlcsordul.
+                        704     
+00005F                  705     SECOND8BIT:
+00005F E9               706             MOV A, R1
+000060 2D               707             ADD A, R5
+000061 F509             708             MOV output+1, A
+000063 500F             709             JNC THIRD8BIT
+000065 EA               710             MOV A, R2
+000066 2401             711             ADD A, #0x01
+000068 FA               712             MOV R2, A
+000069 5009             713             JNC THIRD8BIT
+00006B EB               714             MOV A, R3
+00006C 2401             715             ADD A, #0x01
+00006E FB               716             MOV R3, A
+00006F 5003             717             JNC THIRD8BIT
+000071 750C01           718             MOV maxCarry, #0x01
+                        719     
+000074                  720     THIRD8BIT:
+000074 EA               721             MOV A, R2
+000075 2E               722             ADD A, R6
+000076 F50A             723             MOV output+2, A
+000078 5009             724             JNC FOURTH8BIT
+00007A EB               725             MOV A, R3
+00007B 2401             726             ADD A, #0x01
+00007D FB               727             MOV R3, A
+00007E 5003             728             JNC FOURTH8BIT
+000080 750C01           729             MOV maxCarry, #0x01
+                        730     
+000083                  731     FOURTH8BIT:
+000083 EB               732             MOV A, R3
+000084 2F               733             ADD A, R7
+AX51 MACRO ASSEMBLER  MAIN                                                                  11/22/21 12:36:20 PAGE    13
+
+000085 F50B             734             MOV output+3, A
+                        735     
+                        736             ; Carry flag beállítása, ha be kell (ha a maxCarry-n tárolt érték be lett
+                        737             ; állítva egyre, akkor ha hozzáadunk FF-et, be fogja állítani a carry flage
+                               t).
+000087 4004             738             JC CFLAGNOSET
+000089 E50C             739             MOV A, maxCarry
+00008B 24FF             740             ADD A, #0xFF
+                        741     
+                        742             ; Ezen a ponton az eredmények ki vannak írva a megfelelő memóriatartományba
+                        743             ; a megfelelő sorrendben (LSB first) és a Carry Flag is a teljes művelet
+                        744             ; carryjét tartalmazza. A szubrutin így elvégezte feladatát és visszatérhe
                                t.
-                        718     
-000069 D0D0             719             POP PSW
-                        720     
-00006B 22               721             RET
-                        722     END
-AX51 MACRO ASSEMBLER  MAIN                                                                  11/22/21 10:46:14 PAGE    13
+00008D                  745     CFLAGNOSET:
+00008D D0D0             746             POP PSW
+                        747     
+00008F 22               748             RET
+                        749     
+*** WARNING #A41 IN 749 (C:\Users\Joli\Documents\marHF\32bit-adder-for-EFM8\HFTemplate\src\main.asm, LINE 185): MISSING 
+                               'END' STATEMENT
+AX51 MACRO ASSEMBLER  MAIN                                                                  11/22/21 12:36:20 PAGE    14
 
 SYMBOL TABLE LISTING
 ------ ----- -------
@@ -819,6 +856,7 @@ B_B4 . . . . . . . . . . .  B  ADDR  00F0H.4   A
 B_B5 . . . . . . . . . . .  B  ADDR  00F0H.5   A   
 B_B6 . . . . . . . . . . .  B  ADDR  00F0H.6   A   
 B_B7 . . . . . . . . . . .  B  ADDR  00F0H.7   A   
+CFLAGNOSET . . . . . . . .  C  ADDR  008DH     R   SEG=MYPROG
 CKCON0 . . . . . . . . . .  D  ADDR  008EH     A   
 CKCON1 . . . . . . . . . .  D  ADDR  00A6H     A   
 CL0_IRQN . . . . . . . . .  N  NUMB  0013H     A   
@@ -826,9 +864,9 @@ CLEN0. . . . . . . . . . .  D  ADDR  00C6H     A
 CLIE0. . . . . . . . . . .  D  ADDR  00C7H     A   
 CLIF0. . . . . . . . . . .  D  ADDR  00E8H     A   
 CLIF0_C0FIF. . . . . . . .  B  ADDR  00E8H.0   A   
-CLIF0_C0RIF. . . . . . . .  B  ADDR  00E8H.1   A   
-AX51 MACRO ASSEMBLER  MAIN                                                                  11/22/21 10:46:14 PAGE    14
+AX51 MACRO ASSEMBLER  MAIN                                                                  11/22/21 12:36:20 PAGE    15
 
+CLIF0_C0RIF. . . . . . . .  B  ADDR  00E8H.1   A   
 CLIF0_C1FIF. . . . . . . .  B  ADDR  00E8H.2   A   
 CLIF0_C1RIF. . . . . . . .  B  ADDR  00E8H.3   A   
 CLIF0_C2FIF. . . . . . . .  B  ADDR  00E8H.4   A   
@@ -891,9 +929,9 @@ DACGCF0_D23REFSL . . . . .  B  ADDR  0088H.7   A
 DACGCF0_D3AMEN . . . . . .  B  ADDR  0088H.6   A   
 DACGCF0_D3SRC0 . . . . . .  B  ADDR  0088H.4   A   
 DACGCF0_D3SRC1 . . . . . .  B  ADDR  0088H.5   A   
-DACGCF1. . . . . . . . . .  D  ADDR  0098H     A   
-AX51 MACRO ASSEMBLER  MAIN                                                                  11/22/21 10:46:14 PAGE    15
+AX51 MACRO ASSEMBLER  MAIN                                                                  11/22/21 12:36:20 PAGE    16
 
+DACGCF1. . . . . . . . . .  D  ADDR  0098H     A   
 DACGCF1_D0UDIS . . . . . .  B  ADDR  0098H.0   A   
 DACGCF1_D1UDIS . . . . . .  B  ADDR  0098H.1   A   
 DACGCF1_D2UDIS . . . . . .  B  ADDR  0098H.2   A   
@@ -911,9 +949,9 @@ EIP1H. . . . . . . . . . .  D  ADDR  00EEH     A
 EIP2 . . . . . . . . . . .  D  ADDR  00EDH     A   
 EIP2H. . . . . . . . . . .  D  ADDR  00F6H     A   
 EMI0CN . . . . . . . . . .  D  ADDR  00E7H     A   
-FIRST8BIT. . . . . . . . .  C  ADDR  0041H     R   SEG=MYPROG
+FIRST8BIT. . . . . . . . .  C  ADDR  0044H     R   SEG=MYPROG
 FLKEY. . . . . . . . . . .  D  ADDR  00B7H     A   
-FOURTH8BIT . . . . . . . .  C  ADDR  0065H     R   SEG=MYPROG
+FOURTH8BIT . . . . . . . .  C  ADDR  0083H     R   SEG=MYPROG
 HFO0CAL. . . . . . . . . .  D  ADDR  00C7H     A   
 HFO1CAL. . . . . . . . . .  D  ADDR  00D6H     A   
 HFOCN. . . . . . . . . . .  D  ADDR  00EFH     A   
@@ -954,12 +992,10 @@ LEGACY_PAGE. . . . . . . .  N  NUMB  0000H     A
 LFO0CN . . . . . . . . . .  D  ADDR  00B1H     A   
 LONGWORDADDERSUBROUTINE. .  C  ADDR  003CH     R   SEG=MYPROG
 MAIN . . . . . . . . . . .  C  ADDR  0000H     R   SEG=MYPROG
-MYPROG . . . . . . . . . .  C  SEG   00006CH       REL=UNIT, ALN=BYTE
-NOCARRY1 . . . . . . . . .  C  ADDR  004BH     R   SEG=MYPROG
-NOCARRY2 . . . . . . . . .  C  ADDR  0057H     R   SEG=MYPROG
-AX51 MACRO ASSEMBLER  MAIN                                                                  11/22/21 10:46:14 PAGE    16
+MAXCARRY . . . . . . . . .  N  NUMB  000CH     A   
+MYPROG . . . . . . . . . .  C  SEG   000090H       REL=UNIT, ALN=BYTE
+AX51 MACRO ASSEMBLER  MAIN                                                                  11/22/21 12:36:20 PAGE    17
 
-NOCARRY3 . . . . . . . . .  C  ADDR  0063H     R   SEG=MYPROG
 OUTPUT . . . . . . . . . .  N  NUMB  0008H     A   
 P0 . . . . . . . . . . . .  D  ADDR  0080H     A   
 P0_B0. . . . . . . . . . .  B  ADDR  0080H.0   A   
@@ -1022,9 +1058,9 @@ PCA0CN0_CCF2 . . . . . . .  B  ADDR  00D8H.2   A
 PCA0CN0_CCF3 . . . . . . .  B  ADDR  00D8H.3   A   
 PCA0CN0_CCF4 . . . . . . .  B  ADDR  00D8H.4   A   
 PCA0CN0_CCF5 . . . . . . .  B  ADDR  00D8H.5   A   
-AX51 MACRO ASSEMBLER  MAIN                                                                  11/22/21 10:46:14 PAGE    17
-
 PCA0CN0_CF . . . . . . . .  B  ADDR  00D8H.7   A   
+AX51 MACRO ASSEMBLER  MAIN                                                                  11/22/21 12:36:20 PAGE    18
+
 PCA0CN0_CR . . . . . . . .  B  ADDR  00D8H.6   A   
 PCA0CP0. . . . . . . . . .  D  ADDR  00FBH     A   
 PCA0CP1. . . . . . . . . .  D  ADDR  00E9H     A   
@@ -1087,9 +1123,9 @@ SBUF0. . . . . . . . . . .  D  ADDR  0099H     A
 SBUF1. . . . . . . . . . .  D  ADDR  0092H     A   
 SCON0. . . . . . . . . . .  D  ADDR  0098H     A   
 SCON0_MCE. . . . . . . . .  B  ADDR  0098H.5   A   
-AX51 MACRO ASSEMBLER  MAIN                                                                  11/22/21 10:46:14 PAGE    18
-
 SCON0_RB8. . . . . . . . .  B  ADDR  0098H.2   A   
+AX51 MACRO ASSEMBLER  MAIN                                                                  11/22/21 12:36:20 PAGE    19
+
 SCON0_REN. . . . . . . . .  B  ADDR  0098H.4   A   
 SCON0_RI . . . . . . . . .  B  ADDR  0098H.0   A   
 SCON0_SMODE. . . . . . . .  B  ADDR  0098H.7   A   
@@ -1103,7 +1139,7 @@ SCON1_REN. . . . . . . . .  B  ADDR  00C8H.4   A
 SCON1_RI . . . . . . . . .  B  ADDR  00C8H.0   A   
 SCON1_TBX. . . . . . . . .  B  ADDR  00C8H.3   A   
 SCON1_TI . . . . . . . . .  B  ADDR  00C8H.1   A   
-SECOND8BIT . . . . . . . .  C  ADDR  004DH     R   SEG=MYPROG
+SECOND8BIT . . . . . . . .  C  ADDR  005FH     R   SEG=MYPROG
 SFRPAGE. . . . . . . . . .  D  ADDR  00A7H     A   
 SFRPGCN. . . . . . . . . .  D  ADDR  00BCH     A   
 SFRSTACK . . . . . . . . .  D  ADDR  00D7H     A   
@@ -1152,13 +1188,13 @@ TCON_IT0 . . . . . . . . .  B  ADDR  0088H.0   A
 TCON_IT1 . . . . . . . . .  B  ADDR  0088H.2   A   
 TCON_TF0 . . . . . . . . .  B  ADDR  0088H.5   A   
 TCON_TF1 . . . . . . . . .  B  ADDR  0088H.7   A   
-AX51 MACRO ASSEMBLER  MAIN                                                                  11/22/21 10:46:14 PAGE    19
-
 TCON_TR0 . . . . . . . . .  B  ADDR  0088H.4   A   
+AX51 MACRO ASSEMBLER  MAIN                                                                  11/22/21 12:36:20 PAGE    20
+
 TCON_TR1 . . . . . . . . .  B  ADDR  0088H.6   A   
 TH0. . . . . . . . . . . .  D  ADDR  008CH     A   
 TH1. . . . . . . . . . . .  D  ADDR  008DH     A   
-THIRD8BIT. . . . . . . . .  C  ADDR  0059H     R   SEG=MYPROG
+THIRD8BIT. . . . . . . . .  C  ADDR  0074H     R   SEG=MYPROG
 TIMER0_IRQN. . . . . . . .  N  NUMB  0001H     A   
 TIMER1_IRQN. . . . . . . .  N  NUMB  0003H     A   
 TIMER2_IRQN. . . . . . . .  N  NUMB  0005H     A   
@@ -1217,9 +1253,9 @@ TMR5CN0_TF5CEN . . . . . .  B  ADDR  00C0H.4   A
 TMR5CN0_TF5H . . . . . . .  B  ADDR  00C0H.7   A   
 TMR5CN0_TF5L . . . . . . .  B  ADDR  00C0H.6   A   
 TMR5CN0_TF5LEN . . . . . .  B  ADDR  00C0H.5   A   
-AX51 MACRO ASSEMBLER  MAIN                                                                  11/22/21 10:46:14 PAGE    20
-
 TMR5CN0_TR5. . . . . . . .  B  ADDR  00C0H.2   A   
+AX51 MACRO ASSEMBLER  MAIN                                                                  11/22/21 12:36:20 PAGE    21
+
 TMR5CN1. . . . . . . . . .  D  ADDR  00F1H     A   
 TMR5H. . . . . . . . . . .  D  ADDR  00D5H     A   
 TMR5L. . . . . . . . . . .  D  ADDR  00D4H     A   
@@ -1253,4 +1289,4 @@ XOSC0CN. . . . . . . . . .  D  ADDR  0086H     A
 REGISTER BANK(S) USED: 0 
 
 
-ASSEMBLY COMPLETE.  0 WARNING(S), 0 ERROR(S).
+ASSEMBLY COMPLETE.  1 WARNING(S), 0 ERROR(S).
